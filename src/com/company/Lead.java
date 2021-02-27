@@ -46,17 +46,17 @@ public class Lead {
     }
 
     public static void mostrarDatosTitulos() {
-        System.out.printf("%20s" , "Estado");
+        System.out.printf("%-20s" , "Estado");
         Cliente.mostrarDatosTitulo();
-        System.out.printf("%10s%20s%12s%12s%10s" , "Cantidad","Item","Seguimiento",
+        System.out.printf("%-10s%-20s%-12s%-12s%-10s" , "Cantidad","Item","Seguimiento",
                 "Fecha", "Referencia");
         System.out.println();
     }
 
     public void mostrarDatos() {
-        System.out.printf("%20s" ,estado);
+        System.out.printf("%-20s" ,estado);
         contacto.mostrarDatos();
-        System.out.printf("%10d%20s%12s%12s%10s" , itemOfrecido.getCantidad(),itemOfrecido.getElemento().getNombre(),
+        System.out.printf("%-10d%-20s%-12s%-12s%-10s" , itemOfrecido.getCantidad(),itemOfrecido.getElemento().getNombre(),
                 (aceptaSeguimiento==true)?"Si":"No",
                 fechaPrimerContacto.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                 (precioReferencia==null)?"No":precioReferencia.toString());
