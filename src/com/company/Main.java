@@ -24,9 +24,9 @@ public class Main {
         Cliente cliente2 = new Cliente("Maria Perez","55555333","Imagine SA","Analista Compras");
 
         Vendedor vendedor1=new Vendedor("Martin", "12121212");
-        vendedor1.agregarLead(new Lead("Inicial",cliente1,servicioTV.getElementos().get(1),
+        vendedor1.agregarLead(new Lead("Inicial",cliente1,new Item(2,servicioTV.getElementos().get(1)),
                 true, LocalDate.now(),200.0));
-        vendedor1.agregarLead(new Lead("Inicial",cliente2,servicioTV.getElementos().get(3),
+        vendedor1.agregarLead(new Lead("Inicial",cliente2,new Item(5,servicioTV.getElementos().get(1)),
                 false, LocalDate.now(),null));
 
         servicioTV.agragarVendedor(vendedor1);
