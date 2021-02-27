@@ -22,12 +22,15 @@ public class Main {
 
         Cliente cliente1 = new Cliente("Jose Perez","33333333","SportMax","Gerente de Compras");
         Cliente cliente2 = new Cliente("Maria Perez","55555333","Imagine SA","Analista Compras");
+        Cliente cliente3 = new Cliente("Adrian Sosa","21234366","Imagine SA","Gerente Marketing");
 
         Vendedor vendedor1=new Vendedor("Martin", "12121212");
         vendedor1.agregarLead(new Lead("Inicial",cliente1,new Item(2,servicioTV.getElementos().get(1)),
                 true, LocalDate.now(),200.0));
-        vendedor1.agregarLead(new Lead("Inicial",cliente2,new Item(5,servicioTV.getElementos().get(1)),
+        vendedor1.agregarLead(new Lead("Inicial",cliente2,new Item(5,servicioTV.getElementos().get(3)),
                 false, LocalDate.now(),null));
+        vendedor1.agregarLead(new Lead("Inicial",cliente3,new Item(4,servicioTV.getElementos().get(2)),
+                true, LocalDate.now(),150.0));
 
         servicioTV.agragarVendedor(vendedor1);
 
