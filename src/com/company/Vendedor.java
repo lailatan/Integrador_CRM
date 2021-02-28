@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Vendedor extends Persona {
-    private List<Lead> leads;
+    private List<Oportunidad> oportunidades;
 
     public Vendedor(String nombre, String telefono) {
         super(nombre, telefono);
-        leads = new ArrayList<>();
+        oportunidades = new ArrayList<>();
     }
 
-    public List<Lead> getLeads() {
-        return leads;
+    public List<Oportunidad> getLeads() {
+        return oportunidades;
     }
 
-    public void agregarLead(Lead lead){
-        leads.add(lead);
+    public void agregarOportunidad(Oportunidad oportunidad){
+        oportunidades.add(oportunidad);
     }
 
-    public void eliminarLead(Lead lead){
-        leads.remove(lead);
+    public void eliminarOportunidad(Oportunidad oportunidad){
+        oportunidades.remove(oportunidad);
     }
 
     @Override
@@ -28,13 +28,14 @@ public class Vendedor extends Persona {
         System.out.printf("%20s%20s" , nombre,telefono);
     }
 
-    public void mostrarDatosConLeads() {
+    public void mostrarDatosConOportunidades() {
         System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
         System.out.println("Vendedor: " + nombre + " - Telefono: " + telefono);
         System.out.println("- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -");
-        System.out.println("Cantidad de Oportunidades generadas: " + leads.size());
-        Lead.mostrarDatosTitulos();
-        for (Lead l:leads) {
+        System.out.println("Cantidad de Oportunidades generadas: " + oportunidades.size());
+        Oportunidad.mostrarDatosTitulos();
+        for (Oportunidad l: oportunidades) {
+            System.out.println("---------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             l.mostrarDatos();
             System.out.println();
         }

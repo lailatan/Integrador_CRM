@@ -5,7 +5,8 @@ import java.util.List;
 
 public class Negocio {
     private List<Vendedor> vendedores;
-    private List<Elemento> elementos ;
+    private List<Elemento> elementos;
+    //private List<Clientes> clientes;
 
     public Negocio() {
         this.vendedores = new ArrayList<>() ;

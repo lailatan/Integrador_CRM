@@ -1,6 +1,8 @@
 package com.company;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 CRM para la gestión de ventas en una empresa
@@ -25,15 +27,27 @@ public class Main {
         Cliente cliente3 = new Cliente("Adrian Sosa","21234366","Imagine SA","Gerente Marketing");
 
         Vendedor vendedor1=new Vendedor("Martin", "12121212");
-        vendedor1.agregarLead(new Lead("Inicial",cliente1,new Item(2,servicioTV.getElementos().get(1)),
+        List<Item> items = new ArrayList<>();
+        items.add(new Item(2,servicioTV.getElementos().get(1)));
+
+        vendedor1.agregarOportunidad(new Oportunidad("Inicial",cliente1,items,
                 true, LocalDate.now(),200.0));
-        vendedor1.agregarLead(new Lead("Inicial",cliente2,new Item(5,servicioTV.getElementos().get(3)),
+
+        List<Item> items2 = new ArrayList<>();
+        items2.add(new Item(3,servicioTV.getElementos().get(1)));
+        items2.add(new Item(3,servicioTV.getElementos().get(3)));
+        vendedor1.agregarOportunidad(new Oportunidad("Inicial",cliente2,items2,
                 false, LocalDate.now(),null));
-        vendedor1.agregarLead(new Lead("Inicial",cliente3,new Item(4,servicioTV.getElementos().get(2)),
+
+        List<Item> items3 = new ArrayList<>();
+        items3.add(new Item(1,servicioTV.getElementos().get(0)));
+        items3.add(new Item(2,servicioTV.getElementos().get(1)));
+        items3.add(new Item(3,servicioTV.getElementos().get(2)));
+        vendedor1.agregarOportunidad(new Oportunidad("Inicial",cliente3,items3,
                 true, LocalDate.now(),150.0));
 
         servicioTV.agragarVendedor(vendedor1);
 
-        vendedor1.mostrarDatosConLeads();
+        vendedor1.mostrarDatosConOportunidades();
     }
 }
